@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.TokenWatcher
 import com.example.myapplication.basic_api.data.ExampleData
+import com.example.myapplication.basic_api.data.TkModel
 import com.example.myapplication.basic_api.data.TokenModel
 import com.example.myapplication.basic_api.service.SCBManager
 import retrofit2.Call
@@ -20,14 +21,14 @@ class MainActivity : AppCompatActivity() {
     fun testApi() {
         println("ningnananoii")
         val ex = ExampleData("l7f031d768df40465ba05ae327022a5220" , "8e25c09a6e0a4adeabfd6f50742c969d")
-        SCBManager().createService().getToken(exampleData = ex).enqueue(object : Callback<TokenModel> {
+        SCBManager().createService().getToken(exampleData = ex).enqueue(object : Callback<TkModel> {
 
-            override fun onFailure(call: Call<TokenModel>, t: Throwable) {
+            override fun onFailure(call: Call<TkModel>, t: Throwable) {
                 println("ningnananoii > FAILED ! $t")
 
             }
 
-            override fun onResponse(call: Call<TokenModel>, response: Response<TokenModel>) {
+            override fun onResponse(call: Call<TkModel>, response: Response<TkModel>) {
                 println("ningnananoii > have data")
                 println("ningnanaoii > " + response.body())
                 response.body()?.apply {
