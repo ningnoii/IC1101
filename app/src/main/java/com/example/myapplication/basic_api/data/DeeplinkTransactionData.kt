@@ -2,7 +2,7 @@ package com.example.myapplication.basic_api.data
 
 import com.google.gson.annotations.SerializedName
 
-class DeeplinkTransactionData (
+data class DeeplinkTransactionData (
     @SerializedName("transactionId")
     val transactionId : String?,
 

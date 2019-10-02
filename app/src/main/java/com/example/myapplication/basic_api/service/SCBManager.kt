@@ -12,7 +12,7 @@ class SCBManager {
     private lateinit var deeplinkTS: OkHttpClient
 
     companion object {
-        const val BASE_SCB_API = "https://api.partners.scb/partners/sandbox/"
+        const val BASE_SCB_API = "https://api.partners.scb/partners/sandbox/ "
         var client = OkHttpClient.Builder().addInterceptor(HeaderInterceptor()).build();
 
     }
@@ -29,7 +29,7 @@ class SCBManager {
         val dl: DeeplinkTransactionHeaderInterceptor = DeeplinkTransactionHeaderInterceptor();
         dl.setAccessToken(accessToken)
         deeplinkTS = OkHttpClient.Builder().addInterceptor(dl).build()
-        println("ningnananoii > dl : "+ deeplinkTS)
+        println("ningnananoii > dl : "+ dl.toString())
 
     }
     fun createDeeplinkTransactionService(): SCBApiService = Retrofit.Builder()

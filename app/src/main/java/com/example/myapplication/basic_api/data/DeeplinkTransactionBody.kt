@@ -6,7 +6,7 @@ data class DeeplinkTransactionBody (
     val transactionType : String = "PURCHASE",
     val transactionSubType: List<String> = arrayListOf("BP"),
     val sessionValidityPeriod: Int,
-    val sesisionValidUntil: String,
+    val sessionValidUntil: String,
     val billPayment:BillPaymentModel
 //    val creditCardFullAmount: CreditCardFullAmountModel
 ) {
